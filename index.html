@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Go</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -43,6 +43,80 @@
 					<img src="./images/chrome_logo.png" height="200px">
 					<img src="./images/slack_logo.png" height="200px">
 					<span style="font-size: 200px;">?</span>
+				</section>
+				<section>
+					<img src="./images/concurrent_cpu.png">
+				</section>
+				<section>
+					<h2>OS scheduler</h2>	
+				</section>
+				<section>
+					<h4>CFS scheduler</h4>
+					<img src="./images/cfs.png">
+					<a target="_blank" href="https://github.com/torvalds/linux/blob/master/kernel/sched/fair.c#L7082">
+						code
+					</a>
+				</section>
+				<section>
+					<img src="./images/concurrent_cpu.png">
+				</section>
+				<section>
+					<h4>Прерывания (interrupts)</h4>
+					<div class="col2cont">
+						<div class="col2empty">
+							<p>События:</p>
+						</div>
+						<div class="col2empty">
+							<p>Исключения:</p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h4>Прерывания (interrupts)</h4>
+					<div class="col2cont">
+						<div class="col2">
+							<p>События:</p>
+							<ul>
+								<li>нажатие кнопки</li>
+								<li>тик часов</li>
+								<li>взаимодействие с сетью</li>
+								<li>...</li>
+							</ul>
+						</div>
+						<div class="col2">
+							<p>Исключения:</p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h4>Прерывания (interrupts)</h4>
+					<div class="col2cont">
+						<div class="col2">
+							<p>События:</p>
+							<ul>
+								<li>нажатие кнопки</li>
+								<li>тик часов</li>
+								<li>взаимодействие с сетью</li>
+								<li>...</li>
+							</ul>
+						</div>
+						<div class="col2">
+							<p>Исключения:</p>
+							<ul>
+								<li>деление на 0</li>
+								<li>нарушения памяти (page fault)</li>
+								<li>двойное исключение (double fault)</li>
+								<li>...</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h4>Thread states</h4>
+					<img src="./images/thread_states.png">
+				</section>
+				<section>
+					<img src="./images/sequential_request.png">
 				</section>
 			</div>
 		</div>
