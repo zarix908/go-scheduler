@@ -142,6 +142,25 @@
 						</div>
 					</div>
 				</section>
+				<section>
+					<img src="./images/syscalls.png" >
+					<pre><code data-trim data-noescape>SECTION .data
+msg  db "Hello, world!", 0
+len  equ $ - msg
+SECTION .text
+global _start
+_start:
+        mov rax, 1
+        mov rdi, 1
+        mov rsi, msg
+        mov rdx, len
+        syscall
+        mov rax, 0x3c
+        mov rdi, 0
+        syscall
+
+					</code></pre>
+				</section>
 			</div>
 		</div>
 
