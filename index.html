@@ -31,7 +31,7 @@
 						<li>асинхронность и event loop</li>
 						<li>io bound и cpu bound</li>
 						<li>системные вызовы</li>
-						<li>Go sheduler</li>
+						<li>Go scheduler</li>
 						<li>проблемы Go scheduler-a?!</li>
 					</ol>
 				</section>
@@ -161,7 +161,6 @@ _start:
         mov rax, 0x3c
         mov rdi, 0
         syscall
-
 					</code></pre>
 				</section>
 				<section>
@@ -225,6 +224,22 @@ _start:
 					<a href="https://github.com/golang/go/blob/770f1de8c54256d5b17447028e47b201ba8e62c8/src/runtime/proc.go#L349">code</a>
 				</section>
 				<section>
+					<pre><code data-trim data-noescape>func main() {
+	runtime.GOMAXPROCS(1)
+	go func() {
+		var u int
+		for {
+			u -= 2
+			if u == 1 { break }
+		}
+	}()
+	&lt;- time.After(time.Millisecond * 5) 
+
+	fmt.Println("go 1.13 has never been here")
+}
+					</code></pre>
+				</section>
+				<section>
 					<h4>итоги</h4>
 					<li>хороший дизайн</li>
 					<li>более быстрое (легковесное) переключение контекста</li>
@@ -244,7 +259,7 @@ _start:
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
+				slideNumber: true,
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
